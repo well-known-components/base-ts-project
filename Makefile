@@ -4,10 +4,10 @@ LOCAL_ARG = --local --verbose --diagnostics
 endif
 
 test:
-	TS_NODE_PROJECT=test/tsconfig.json ./node_modules/.bin/mocha $(TESTARGS)
+	node_modules/.bin/jest --detectOpenHandles --colors --runInBand $(TESTARGS)
 
 test-watch:
-	TS_NODE_PROJECT=test/tsconfig.json ./node_modules/.bin/mocha --watch $(TESTARGS)
+	node_modules/.bin/jest --detectOpenHandles --colors --runInBand --watch $(TESTARGS)
 
 build:
 	./node_modules/.bin/tsc -p tsconfig.json
