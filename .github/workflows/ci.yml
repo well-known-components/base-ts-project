@@ -9,7 +9,7 @@ on:
 
 name: CI
 jobs:
-  build:
+  build-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -30,3 +30,18 @@ jobs:
           access: public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+  test-node-14:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: install
+        run:  npm install
+      - name: build
+        run:  make build
+      - name: test
+        run:  make test
