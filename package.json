@@ -4,7 +4,10 @@
   "description": "base component",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "jest --forceExit --detectOpenHandles --coverage --verbose"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/well-known-components/base-component.git"
@@ -17,15 +20,16 @@
   },
   "prettier": {
     "printWidth": 120,
-    "semi": false
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 2
   },
   "homepage": "https://github.com/well-known-components/base-component#readme",
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.17.0",
-    "@types/jest": "^28.1.0",
-    "jest": "^28.1.0",
-    "ts-jest": "^28.0.4",
-    "typescript": "^4.7.3"
+    "@microsoft/api-extractor": "^7.42.3",
+    "@well-known-components/test-helpers": "^1.5.6",
+    "typescript": "^5.4.2"
   },
   "files": [
     "dist"
