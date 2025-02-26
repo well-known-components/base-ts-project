@@ -18,13 +18,6 @@
   "bugs": {
     "url": "https://github.com/well-known-components/base-component/issues"
   },
-  "prettier": {
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "tabWidth": 2
-  },
   "homepage": "https://github.com/well-known-components/base-component#readme",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.42.3",
